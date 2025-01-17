@@ -166,3 +166,5 @@ require (
 	modernc.org/token v1.1.0 // indirect
 	rsc.io/tmplfunc v0.0.3 // indirect
 )
+
+replace github.com/0xPolygonHermez/zkevm-synchronizer-l1 => github.com/MerlinLayer2/zkevm-synchronizer-l1 v0.0.0-20250117065426-631932433f9e
