@@ -109,7 +109,7 @@ func (rd *ReorgDetector) AddBlockToTrack(ctx context.Context, id string, num uin
 // Notifies subscribers if reorg has happened
 func (rd *ReorgDetector) detectReorgInTrackedList(ctx context.Context) error {
 	// Get the latest finalized block
-	lastFinalisedBlock, err := rd.client.HeaderByNumber(ctx, big.NewInt(int64(rpc.FinalizedBlockNumber)))
+	lastFinalisedBlock, err := rd.client.HeaderByNumber(ctx, big.NewInt(int64(rpc.LatestBlockNumber)))
 	if err != nil {
 		return fmt.Errorf("failed to get the latest finalized block: %w", err)
 	}
