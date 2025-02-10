@@ -365,6 +365,8 @@ func (s *SequenceSender) tryToSendSequence(ctx context.Context) {
 
 	sequence.SetLastVirtualBatchNumber(atomic.LoadUint64(&s.latestVirtualBatchNumber))
 
+	s.logger.Infof("sending EstimateGas SenderAddress %s , to address %s, tx data is %s", s.cfg.SenderAddress, tx.To().String(), common.Bytes2Hex(tx.Data()))
+
 	gas, err := s.etherman.EstimateGas(ctx, s.cfg.SenderAddress, tx.To(), nil, tx.Data())
 	if err != nil {
 		s.logger.Errorf("error estimating gas: ", err)

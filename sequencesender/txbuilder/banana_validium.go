@@ -134,7 +134,14 @@ func (t *TxBuilderBananaValidium) sequenceBatchesValidium(
 		}
 	}
 
-	t.logger.Infof("building banana sequence tx. AccInputHash: %s", sequence.AccInputHash.Hex())
+	t.logger.Infof("building banana sequence tx. from addess %s, batches length %d, CounterL1InfoRoot %d, MaxSequenceTimestamp %d,  AccInputHash: %s, L2Coinbase %s",
+		opts.From.String(),
+		len(batches),
+		sequence.CounterL1InfoRoot,
+		sequence.MaxSequenceTimestamp,
+		sequence.AccInputHash.Hex(),
+		sequence.L2Coinbase,
+	)
 	tx, err := t.rollupContract.SequenceBatchesValidium(
 		&opts, batches, sequence.CounterL1InfoRoot, sequence.MaxSequenceTimestamp,
 		sequence.AccInputHash, sequence.L2Coinbase, dataAvailabilityMessage,
