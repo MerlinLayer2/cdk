@@ -1611,6 +1611,9 @@ func (a *Aggregator) handleMonitoredTxResult(result ethtxtypes.MonitoredTxResult
 	if err != nil {
 		mTxResultLogger.Errorf("failed to get finalized block number: %v", err)
 	}
+	if finaLizedBlockNumber-1 > 0 {
+		finaLizedBlockNumber = finaLizedBlockNumber - 1
+	}
 
 	for result.MinedAtBlockNumber.Uint64() > finaLizedBlockNumber {
 		select {
@@ -1620,6 +1623,9 @@ func (a *Aggregator) handleMonitoredTxResult(result ethtxtypes.MonitoredTxResult
 			finaLizedBlockNumber, err = l1_check_block.L1LastestFetch.BlockNumber(a.ctx, a.etherman)
 			if err != nil {
 				mTxResultLogger.Errorf("failed to get finalized block number: %v", err)
+			}
+			if finaLizedBlockNumber-1 > 0 {
+				finaLizedBlockNumber = finaLizedBlockNumber - 1
 			}
 		}
 	}
