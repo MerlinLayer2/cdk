@@ -1607,7 +1607,7 @@ func (a *Aggregator) handleMonitoredTxResult(result ethtxtypes.MonitoredTxResult
 	// Wait for the transaction to be finalized, then we can safely delete all recursive
 	// proofs up to the last batch in this proof
 
-	finaLizedBlockNumber, err := l1_check_block.L1FinalizedFetch.BlockNumber(a.ctx, a.etherman)
+	finaLizedBlockNumber, err := l1_check_block.L1LastestFetch.BlockNumber(a.ctx, a.etherman)
 	if err != nil {
 		mTxResultLogger.Errorf("failed to get finalized block number: %v", err)
 	}
@@ -1617,7 +1617,7 @@ func (a *Aggregator) handleMonitoredTxResult(result ethtxtypes.MonitoredTxResult
 		case <-a.ctx.Done():
 			return
 		case <-time.After(a.cfg.RetryTime.Duration):
-			finaLizedBlockNumber, err = l1_check_block.L1FinalizedFetch.BlockNumber(a.ctx, a.etherman)
+			finaLizedBlockNumber, err = l1_check_block.L1LastestFetch.BlockNumber(a.ctx, a.etherman)
 			if err != nil {
 				mTxResultLogger.Errorf("failed to get finalized block number: %v", err)
 			}
