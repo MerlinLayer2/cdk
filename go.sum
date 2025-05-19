@@ -12,8 +12,8 @@ github.com/DataDog/zstd v1.5.6/go.mod h1:g4AWEaM3yOg3HYfnJ3YIawPnVdXJh9QME85blwS
 github.com/Masterminds/semver/v3 v3.1.1/go.mod h1:VPu/7SZ7ePZ3QOrcuXROw5FAcLl4a0cBrbBpGY/8hQs=
 github.com/Masterminds/semver/v3 v3.2.0 h1:3MEsd0SM6jqZojhjLWWeBY+Kcjy9i6MQAeY7YgDP83g=
 github.com/Masterminds/semver/v3 v3.2.0/go.mod h1:qvl/7zhW3nngYb5+80sSMF+FG2BjYrf8m9wsX0PNOMQ=
-github.com/MerlinLayer2/zkevm-synchronizer-l1 v1.0.6 h1:zDKPIOyH6/MS71XgsL6B51O5R3aWZ9d6RshNh1OZh2s=
-github.com/MerlinLayer2/zkevm-synchronizer-l1 v1.0.6/go.mod h1:X4Su/M/+hSISqdl9yomKlRsbTyuZHsRohporyHsP8gg=
+github.com/MerlinLayer2/zkevm-synchronizer-l1 v1.0.7-0.20250519061342-71f42a3a0d8d h1:HfdMkAoYi1bTZJi+Ia8q1Ky459uSdOpldNQvq5EULvM=
+github.com/MerlinLayer2/zkevm-synchronizer-l1 v1.0.7-0.20250519061342-71f42a3a0d8d/go.mod h1:X4Su/M/+hSISqdl9yomKlRsbTyuZHsRohporyHsP8gg=
 github.com/Microsoft/go-winio v0.6.2 h1:F2VQgta7ecxGYO8k3ZZz3RS8fVIXVxONVUPlNERoyfY=
 github.com/Microsoft/go-winio v0.6.2/go.mod h1:yd8OoFMLzJbo9gZq8j5qaps8bJ9aShtEA8Ipt1oGCvU=
 github.com/StackExchange/wmi v1.2.1 h1:VIkavFPXSjcnS+O8yTq7NI32k0R5Aj+v39y29VYDOSA=

@@ -167,4 +167,4 @@ require (
 	rsc.io/tmplfunc v0.0.3 // indirect
 )
 
-replace github.com/0xPolygonHermez/zkevm-synchronizer-l1 => github.com/MerlinLayer2/zkevm-synchronizer-l1 v1.0.6
+replace github.com/0xPolygonHermez/zkevm-synchronizer-l1 => github.com/MerlinLayer2/zkevm-synchronizer-l1 v1.0.7-0.20250519061342-71f42a3a0d8d
