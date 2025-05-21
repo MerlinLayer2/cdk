@@ -184,9 +184,16 @@ func (t *TxBuilderBananaBase) NewSequence(
 			blockHash = batch.ForcedBlockHashL1
 		}
 
+		old := accInputHash
 		accInputHash = cdkcommon.CalculateAccInputHash(
 			t.logger, accInputHash, batch.L2Data, infoRootHash, timestamp, batch.LastCoinbase, blockHash,
 		)
+		log.Infof("NewSequence batchNum %d, old accInputHash %s, new accInputHash %s", batch.BatchNumber, old, accInputHash)
+	}
+
+	if len(sequence.Batches) != 0 {
+		log.Infof("NewSequence batch from batchNum %d, to batchNum %d, old accInputHash %s, new accInputHash %s",
+			sequence.Batches[0].BatchNumber, sequence.Batches[len(sequence.Batches)-1].BatchNumber, oldAccInputHash, accInputHash)
 	}
 
 	sequence.OldAccInputHash = oldAccInputHash
